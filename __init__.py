@@ -37,7 +37,7 @@ class HelloEarthSkill(MycroftSkill):
     #    how_are_you_intent = IntentBuilder("HowAreYouIntent"). \
     #        require("HowAreYouKeyword").build()
     #    self.register_intent(how_are_you_intent,
-                             self.handle_how_are_you_intent)
+    #                         self.handle_how_are_you_intent)
 
         hello_earth_intent = IntentBuilder("HelloEarthIntent"). \
             require("HelloEarthKeyword").build()
