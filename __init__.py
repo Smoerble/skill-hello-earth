@@ -45,9 +45,9 @@ class HelloEarthSkill(MycroftSkill):
     #                         self.handle_hello_earth_intent)
 	
         hello_earth_intent = IntentBuilder("HelloEarthIntent")
-			.require("HelloEarthKeyword")
+            .require("HelloEarthKeyword")
             .require('phrase')
-			.build()
+    	    .build()
         self.register_intent(hello_earth_intent,
                              self.handle_hello_earth_intent)
 			
@@ -59,7 +59,7 @@ class HelloEarthSkill(MycroftSkill):
 
     def handle_hello_earth_intent(self, message):
         intentText = message.data.get("HelloEarthKeyword")
-		movieName = message.data.get("phrase")
+        movieName = message.data.get("phrase")
     #    self.speak_dialog("hello.earth")
         self.speak_dialog(movieName)
 		
