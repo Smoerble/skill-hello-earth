@@ -39,11 +39,18 @@ class HelloEarthSkill(MycroftSkill):
     #    self.register_intent(how_are_you_intent,
     #                         self.handle_how_are_you_intent)
 
-        hello_earth_intent = IntentBuilder("HelloEarthIntent"). \
-            require("HelloEarthKeyword").build()
+    #    hello_earth_intent = IntentBuilder("HelloEarthIntent"). \
+    #        require("HelloEarthKeyword").build()
+    #    self.register_intent(hello_earth_intent,
+    #                         self.handle_hello_earth_intent)
+	
+    hello_earth_intent = IntentBuilder("HelloEarthIntent")
+			.require("HelloEarthKeyword")
+            .require('phrase')
+			.build()
         self.register_intent(hello_earth_intent,
                              self.handle_hello_earth_intent)
-
+			
     #def handle_thank_you_intent(self, message):
     #    self.speak_dialog("welcome")
 
@@ -51,8 +58,11 @@ class HelloEarthSkill(MycroftSkill):
     #    self.speak_dialog("how.are.you")
 
     def handle_hello_earth_intent(self, message):
-        self.speak_dialog("hello.earth")
-
+        intentText = message.data.get("HelloEarthKeyword")
+		movieName = message.data.get("phrase")
+    #    self.speak_dialog("hello.earth")
+        self.speak_dialog(movieName)
+		
     def stop(self):
         pass
 
