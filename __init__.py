@@ -44,8 +44,7 @@ class HelloEarthSkill(MycroftSkill):
     #    self.register_intent(hello_earth_intent,
     #                         self.handle_hello_earth_intent)
 	
-        hello_earth_intent = IntentBuilder("HelloEarthIntent")
-            .require("HelloEarthKeyword")
+        hello_earth_intent = IntentBuilder("HelloEarthIntent").require("HelloEarthKeyword")
             .require('phrase')
     	    .build()
         self.register_intent(hello_earth_intent,
